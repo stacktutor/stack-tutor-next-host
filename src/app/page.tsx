@@ -1,22 +1,8 @@
-import SideBar from "@/components/SideBar";
-
 export default function Page() {
   return (
-    <main className="grid grid-cols-12 gap-4 w-full px-4 py-6">
-      {/* Sidebar */}
-      <SideBar/>
-
-      {/* Main Content */}
-      <section className="col-span-12 md:col-span-6 bg-white dark:bg-black p-4 rounded-lg shadow">
-        <h1 className="text-4xl font-extrabold mb-2">♥️ Hii</h1>
-        <p>Main content goes here...</p>
-      </section>
-
-      {/* Ad Section */}
-      <aside className="col-span-2 hidden lg:block bg-gray-100 dark:bg-gray-900 p-4 rounded-lg">
-        <h2 className="text-lg font-bold">Ads</h2>
-        <p>Sponsored content</p>
-      </aside>
+    // <main className="flex flex-col px-4 items-center text-center justify-center w-full min-w-0 min-h-[calc(100dvh-2.75rem)] mx-auto max-w-7xl">
+    <main className="p-4 h-full ">
+      <h1 className="text-4xl">Sidebar Component</h1>
     </main>
   );
 }
