@@ -1,7 +1,9 @@
 import ThemeProvider from "@/theme/theme-provider";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import SideBar from "@/components/sidebarSHAD";
+
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+import { AppSidebar } from "@/components/Sidebar";
 
 export default function RootLayout({
   children,
@@ -19,26 +21,24 @@ export default function RootLayout({
         >
           <Navbar />
 
-          <main className="grid grid-cols-12 gap-4 w-full px-14 h-screen">
+            <SidebarProvider>
+              <AppSidebar />
+              <main className="grid grid-cols-12 pr-3 gap-4 w-full  h-screen">
+                <SidebarTrigger  />
 
-            {/* Sidebar Section  */}
-            <aside className="col-span-3 hidden md:block p-4 border-2 border-dotted border-b-black dark:border-b-gray-400 shadow-md dark:shadow-md">
-                space for side bar
-            </aside>
-
-            {/* Main Content */}
-            <section className="col-span-7  bg-white dark:bg-black p-4 rounded-md shadow">
+                {/* <section className="col-span-8  bg-amber-500 px-2 max-w-[1524px] mx-auto  md:w-full lg:-mx-[70px] rounded-md shadow"> */}
+                <section className="col-span-8 px-2 md:w-full bg-amber-500 rounded-md shadow">
                 {children}
-            </section>
+                 </section>
 
-            {/* Ad Section */}
-            <aside className="col-span-2 hidden lg:block p-4 border-2 border-dotted border-b-black dark:border-b-gray-400 shadow-md dark:shadow-md">
-              <h2 className="text-lg font-bold">Ads</h2>
-              <p>Sponsored content</p>
-            </aside>
-          </main>
+                {/* Ad Section */}
+                <aside className="col-span-3 hidden md:block p-4 border-2 border-dotted border-b-black dark:border-b-gray-400 shadow-md dark:shadow-md">
+                  <h2 className="text-lg font-bold">Ads</h2>
+                  <p>Sponsored content</p>
+                </aside>
+              </main>
+            </SidebarProvider>
 
-          
         </ThemeProvider>
       </body>
     </html>
